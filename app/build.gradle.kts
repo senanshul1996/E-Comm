@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt")
+  // id("androidx.navigation.safeargs.kotlin")
+    alias(libs.plugins.safe.args)  // Applying Safe Args plugin
+
+
 }
 
 android {
@@ -33,6 +37,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    viewBinding {
+        enable = true
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -68,4 +80,13 @@ dependencies {
 
     // LiveData
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+
+    // Glide for image loading
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    kapt("com.github.bumptech.glide:compiler:4.15.1")
+
+
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.3")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.8.3")
+ //   implementation("androidx.navigation:navigation-safe-args-gradle-plugin:2.8.3")
 }

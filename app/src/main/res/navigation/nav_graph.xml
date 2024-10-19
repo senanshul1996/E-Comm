@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.ecomapp.ui.screens.ProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+    <action
+        android:id="@+id/action_productListFragment_to_productDetailFragment"
+        app:destination="@id/productDetailFragment"
+        app:enterAnim="@transition/slide_in_right"
+        app:exitAnim="@transition/slide_out_left"
+        app:popEnterAnim="@transition/slide_in_left"
+        app:popExitAnim="@transition/slide_out_right"/>
+</fragment>
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.ecomapp.ui.screens.ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="productId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.ecomapp.ui.screens.CartFragment"
+        tools:layout="@layout/fragment_cart" />
+</navigation>

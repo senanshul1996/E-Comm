@@ -4,7 +4,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://api.pokemontcg.io/"
+    private const val BASE_URL = "https://fakestoreapi.com/"
 
     val api: ProductApi by lazy {
         Retrofit.Builder()
