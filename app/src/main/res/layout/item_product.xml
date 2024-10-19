@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp">
 
-        <!-- Product Image -->
+
         <ImageView
             android:id="@+id/productImage"
             android:layout_width="100dp"
@@ -24,7 +24,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
           />
 
-        <!-- Product Info Container -->
+
         <LinearLayout
             android:id="@+id/productInfo"
             android:layout_width="0dp"
@@ -36,7 +36,7 @@
             app:layout_constraintStart_toEndOf="@id/productImage"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Product Name -->
+
             <TextView
                 android:id="@+id/productName"
                 android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
                 android:textColor="@android:color/black"
                 />
 
-            <!-- Product Price -->
+
             <TextView
                 android:id="@+id/productPrice"
                 android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                 android:textColor="@android:color/holo_green_dark"
               />
 
-            <!-- Product Quantity -->
+
             <TextView
                 android:id="@+id/productQuantity"
                 android:layout_width="wrap_content"

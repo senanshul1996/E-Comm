@@ -15,8 +15,6 @@ import com.example.ecomapp.data.repository.ProductRepository
 import kotlinx.coroutines.launch
 
 class ProductViewModel(private val productRepository: ProductRepository) : ViewModel() {
-   // class ProductViewModel(application: Application,private val productRepository: ProductRepository) : AndroidViewModel(application) {
-
 
     private val _products = MutableLiveData<ProductModel>()
     val products: LiveData<ProductModel> get() = _products

@@ -21,7 +21,4 @@ class CartRepository(private val cartDao: CartDao) {
         cartDao.updateCartItem(cartItem)
     }
 
-//    suspend fun getCartItemList() : LiveData<List<CartItem>> {
-//       return cartDao.getAllCartItems()
-//    }
 }

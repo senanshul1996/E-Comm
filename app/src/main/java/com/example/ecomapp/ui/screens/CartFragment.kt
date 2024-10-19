@@ -55,9 +55,6 @@ class CartFragment : Fragment() {
 
 
 
-      //  cartViewModel.getCartItemList()
-
-
         return binding.root
     }
 }

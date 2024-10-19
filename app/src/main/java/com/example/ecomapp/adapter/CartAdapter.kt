@@ -11,10 +11,10 @@ import com.example.ecomapp.adapter.ProductAdapter.ProductViewHolder
 import com.example.ecomapp.data.model.ProductModel
 import com.example.ecomapp.data.model.ProductModelItem
 import com.example.ecomapp.databinding.ItemCartBinding
-import com.example.ecomapp.databinding.ItemProductBinding
 
 
-//class CartAdapter : ListAdapter<CartItem, CartAdapter.CartViewHolder>(CartDiffCallback()) {
+
+
 class CartAdapter(private var cartList: List<CartItem>) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     inner class CartViewHolder(val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root)
@@ -25,26 +25,19 @@ class CartAdapter(private var cartList: List<CartItem>) : RecyclerView.Adapter<C
         return CartViewHolder(binding)
     }
 
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
-//        val binding = ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-//        return CartViewHolder(binding)
-//    }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
 
-       val product = cartList[position]
+        val product = cartList[position]
         holder.binding.apply {
             productName.text = product.productName
             priceTV.text = "$${product.price}"
-            quantityTV.text = "Qty: ${ product.quantity.toString() }"
-           Glide.with(productImage.context).load(product.image).into(productImage)
+            quantityTV.text = "Qty: ${product.quantity.toString()}"
+            Glide.with(productImage.context).load(product.image).into(productImage)
         }
-//
-//        // Handle click events
-//        holder.itemView.setOnClickListener {
-//            onClick(product)
-//        }
+
     }
+
     override fun getItemCount(): Int = cartList.size
 
     fun updateProductList(cartList: List<CartItem>) {
@@ -52,26 +45,4 @@ class CartAdapter(private var cartList: List<CartItem>) : RecyclerView.Adapter<C
         notifyDataSetChanged()
     }
 
-//    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-//        val cartItem = getItem(position)
-//        holder.bind(cartItem)
-//    }
-
-//    class CartViewHolder(private val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
-//        fun bind(cartItem: CartItem) {
-//            binding.cartItem = cartItem
-//            binding.executePendingBindings()
-//        }
-//    }
 }
-
-//class CartDiffCallback : DiffUtil.ItemCallback<CartItem>() {
-//    override fun areItemsTheSame(oldItem: CartItem, newItem: CartItem): Boolean {
-//        return oldItem.productId == newItem.productId
-//       // return oldItem.id == newItem.id
-//    }
-//
-//    override fun areContentsTheSame(oldItem: CartItem, newItem: CartItem): Boolean {
-//        return oldItem == newItem
-//    }
-//}

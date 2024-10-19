@@ -27,13 +27,13 @@ class ProductAdapter(private var productList: ProductModel, private val onClick:
             Glide.with(productImage.context).load(product.image).into(productImage)
         }
 
-        // Handle click events
+
         holder.itemView.setOnClickListener {
             onClick(product)
         }
     }
 
-    // Method to update product list dynamically
+
     fun updateProductList(newProductList: ProductModel) {
         productList = newProductList
         notifyDataSetChanged()
